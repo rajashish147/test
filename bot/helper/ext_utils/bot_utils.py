@@ -92,7 +92,7 @@ def bt_selection_buttons(id_):
     return buttons.build_menu(2)
 
 async def get_telegraph_list(telegraph_content):
-    path = [(await telegraph.create_page(title='Mirror-Leech-Bot Drive Search', content=content))["path"] for content in telegraph_content]
+    path = [(await telegraph.create_page(title='Noods Mirror bot search', content=content))["path"] for content in telegraph_content]
     if len(path) > 1:
         await telegraph.edit_telegraph(path, telegraph_content)
     buttons = ButtonMaker()
@@ -104,8 +104,8 @@ def get_progress_bar_string(pct):
     pct = float(pct.strip('%'))
     p = min(max(pct, 0), 100)
     cFull = int(p // 8)
-    p_str = '■' * cFull
-    p_str += '□' * (12 - cFull)
+    p_str = '●' * cFull
+    p_str += '○' * (12 - cFull)
     return f"[{p_str}]"
 
 

@@ -77,7 +77,7 @@ class TelegraphHelper:
         return
 
 
-telegraph = TelegraphHelper('Mirror-Leech-Telegram-Bot',
-                            'https://github.com/anasty17/mirror-leech-telegram-bot')
+telegraph = TelegraphHelper('Noods Mirror Bot',
+                            'https://github.com/rajashish147/test')
 
 bot_loop.run_until_complete(telegraph.create_account())
