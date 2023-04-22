@@ -22,7 +22,7 @@ Number should be always before n:, pswd: and opt:
 <code>/cmd</code> 10(number of links) m:folder_name
 Number and m:folder_name should be always before n:, pswd: and opt:
 
-<b>Options Note:</b> Add `^` before integer or inf or float, some values must be numeric and some string.
+<b>Options Note:</b> Add `^` before integer or float, some values must be numeric and some string.
 Like playlist_items:10 works with string, so no need to add `^` before the number but playlistend works only with integer so you must add `^` before the number like example above.
 You can add tuple and dict also. Use double quotes inside dict.
 
@@ -46,7 +46,7 @@ Check here all <a href='https://rclone.org/flags/'>RcloneFlags</a>.
 4. You can always add video quality from yt-dlp api options.
 5. Don't add file extension while rename using `n:`
 
-Check all yt-dlp api options from this <a href='https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py#L184'>FILE</a>.
+Check all yt-dlp api options from this <a href='https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py#L184'>FILE</a> or use this <a href='https://t.me/mltb_official/177'>script</a> to convert cli arguments to api options.
 """
 
 MIRROR_HELP_MESSAGE = """
