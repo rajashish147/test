@@ -55,8 +55,8 @@ async def stats(client, message):
 async def start(client, message):
     buttons = ButtonMaker()
     buttons.ubutton(
-        "Repo", "https://www.github.com/anasty17/mirror-leech-telegram-bot")
-    buttons.ubutton("Owner", "https://t.me/anas_tayyar")
+        "Repo", "https://github.com/rajashish147/test")
+    buttons.ubutton("Owner", "https://t.me/pyaracetamoll")
     reply_markup = buttons.build_menu(2)
     if await CustomFilters.authorized(client, message):
         start_string = f'''

@@ -2,7 +2,7 @@ This is a Telegram Bot written in Python for mirroring files on the Internet to 
 
 # Features
 
-## By [anasty17](https://github.com/anasty17)
+## By [ashish](https://github.com/rajashish147)
 
 In each single file there is a major change from base code, it's almost totaly different. Here some of features and fixes that I remember.
 
@@ -28,7 +28,7 @@ In each single file there is a major change from base code, it's almost totaly d
 - Leech support
 - Splitting
 - Thumbnail for each user
-- Leech filename prefix for each user. Stolen from [Juned KH](https://github.com/junedkh)
+- Leech filename prefix for each user.
 - Set upload as document or as media for each user
 - 4GB file upload with premium account
 - Upload all files to specific superGroup/channel.
@@ -162,7 +162,7 @@ In each single file there is a major change from base code, it's almost totaly d
 - Clone this repo:
 
 ```
-git clone https://github.com/anasty17/mirror-leech-telegram-bot mirrorbot/ && cd mirrorbot
+git clone https://github.com/rajashish147/mirror-leech-telegram-bot mirrorbot/ && cd mirrorbot
 ```
 
 - For Debian based distros
@@ -211,12 +211,12 @@ Fill up rest of the fields. Meaning of each field is discussed below. **NOTE**: 
 **2. Optional Fields**
 
 - `USER_SESSION_STRING`: To download/upload from your telegram account and to send rss. To generate session string use this command `python3 generate_string_session.py` after mounting repo folder for sure. `Str`. **NOTE**: You can't use bot with private message. Use it with superGroup.
-- `DATABASE_URL`: Your Mongo Database URL (Connection string). Follow this [Generate Database](https://github.com/anasty17/mirror-leech-telegram-bot/tree/master#generate-database) to generate database. Data will be saved in Database: auth and sudo users, users settings including thumbnails for each user, rss data and incomplete tasks. **NOTE**: You can always edit all settings that saved in database from the official site -> (Browse collections). `Str`
+- `DATABASE_URL`: Your Mongo Database URL (Connection string). Follow this [Generate Database](https://github.com/rajashish147/mirror-leech-telegram-bot/tree/master#generate-database) to generate database. Data will be saved in Database: auth and sudo users, users settings including thumbnails for each user, rss data and incomplete tasks. **NOTE**: You can always edit all settings that saved in database from the official site -> (Browse collections). `Str`
 - `DOWNLOAD_DIR`: The path to the local folder where the downloads should be downloaded to. `Str`
 - `CMD_SUFFIX`: commands index number. This number will added at the end all commands. `Str`|`Int`
 - `AUTHORIZED_CHATS`: Fill user_id and chat_id of groups/users you want to authorize. Separate them by space. `Int`
 - `SUDO_USERS`: Fill user_id of users whom you want to give sudo permission. Separate them by space. `Int`
-- `DEFAULT_UPLOAD`: Whether `rc` to upload to `RCLONE_PATH` or `gd` to upload to `GDRIVE_ID`. Default is `gd`. Read More [HERE](https://github.com/anasty17/mirror-leech-telegram-bot/tree/master#upload).`Str`
+- `DEFAULT_UPLOAD`: Whether `rc` to upload to `RCLONE_PATH` or `gd` to upload to `GDRIVE_ID`. Default is `gd`. Read More [HERE](https://github.com/rajashish147/mirror-leech-telegram-bot/tree/master#upload).`Str`
 - `STATUS_UPDATE_INTERVAL`: Time in seconds after which the progress/status message will be updated. Recommended `10` seconds at least. `Int`
 - `AUTO_DELETE_MESSAGE_DURATION`: Interval of time (in seconds), after which the bot deletes it's message and command message which is expected to be viewed instantly. **NOTE**: Set to `-1` to disable auto message deletion. `Int`
 - `STATUS_LIMIT`: Limit the no. of tasks shown in status message with buttons. Default is `10`. **NOTE**: Recommended limit is `4` tasks. `Int`
@@ -225,7 +225,7 @@ Fill up rest of the fields. Meaning of each field is discussed below. **NOTE**: 
 - `UPTOBOX_TOKEN`: Uptobox token to mirror uptobox links. Get it from [Uptobox Premium Account](https://uptobox.com/my_account). `str`
 - `YT_DLP_OPTIONS`: Default yt-dlp options. Check all possible options [HERE](https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py#L184) or use this [script](https://t.me/mltb_official/177) to convert cli arguments to api options. Format: key:value|key:value|key:value. Add `^` before integer or float, some numbers must be numeric and some string. `str`
   - Example: "format:bv*+mergeall[vcodec=none]|nocheckcertificate:True"
-- `USE_SERVICE_ACCOUNTS`: Whether to use Service Accounts or not, with google-api-python-client. For this to work see [Using Service Accounts](https://github.com/anasty17/mirror-leech-telegram-bot#generate-service-accounts-what-is-service-account) section below. Default is `False`. `Bool`
+- `USE_SERVICE_ACCOUNTS`: Whether to use Service Accounts or not, with google-api-python-client. For this to work see [Using Service Accounts](https://github.com/rajashish147/mirror-leech-telegram-bot#generate-service-accounts-what-is-service-account) section below. Default is `False`. `Bool`
 
 ### GDrive Tools
 
@@ -246,7 +246,7 @@ Fill up rest of the fields. Meaning of each field is discussed below. **NOTE**: 
 ### Update
 
 - `UPSTREAM_REPO`: Your github repository link, if your repo is private add `https://username:{githubtoken}@github.com/{username}/{reponame}` format. Get token from [Github settings](https://github.com/settings/tokens). So you can update your bot from filled repository on each restart. `Str`.
-  - **NOTE**: Any change in docker or requirements you need to deploy/build again with updated repo to take effect. DON'T delete .gitignore file. For more information read [THIS](https://github.com/anasty17/mirror-leech-telegram-bot/tree/master#upstream-repo-recommended).
+  - **NOTE**: Any change in docker or requirements you need to deploy/build again with updated repo to take effect. DON'T delete .gitignore file. For more information read [THIS](https://github.com/rajashish147/mirror-leech-telegram-bot/tree/master#upstream-repo-recommended).
 - `UPSTREAM_BRANCH`: Upstream branch for update. Default is `master`. `Str`
 
 ### Leech
@@ -337,7 +337,7 @@ sudo docker stop id
 
 #### Build And Run The Docker Image Using docker-compose
 
-**NOTE**: If you want to use ports other than 80 and 8080 for torrent file selection and rclone serve respectively, change it in [docker-compose.yml](https://github.com/anasty17/mirror-leech-telegram-bot/blob/master/docker-compose.yml) also.
+**NOTE**: If you want to use ports other than 80 and 8080 for torrent file selection and rclone serve respectively, change it in [docker-compose.yml](https://github.com/rajashish147/mirror-leech-telegram-bot/blob/master/docker-compose.yml) also.
 
 - Install docker-compose
 
@@ -668,7 +668,7 @@ machine host login username password my_password
 Example:
 
 ```
-machine instagram login anas.tayyar password mypassword
+machine instagram login https://github.com/rajashish147.tayyar password mypassword
 ```
 
 **Instagram Note**: You must login even if you want to download public posts and after first try you must confirm that this was you logged in from different ip(you can confirm from phone app).
@@ -689,7 +689,7 @@ Where host is the name of extractor (eg. instagram, Twitch). Multiple accounts o
 
 <p> If you feel like showing your appreciation for this project, then how about buying me a coffee.</p>
 
-[!["Buy Me A Coffee"](https://storage.ko-fi.com/cdn/kofi2.png)](https://ko-fi.com/anasty17)
+[!["Buy Me A Coffee"](https://storage.ko-fi.com/cdn/kofi2.png)](https://ko-fi.com/https://github.com/rajashish147ty17)
 
 Binance ID:
 ```
